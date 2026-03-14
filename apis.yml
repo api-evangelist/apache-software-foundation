@@ -1,0 +1,16 @@
+name: Apache Software Foundation
+description: >-
+  APIs for the Apache Software Foundation (ASF), a nonprofit organization
+  that supports the development of open-source software projects under
+  the Apache license, providing governance, legal protection, and
+  infrastructure for over 350 projects.
+url: https://www.apache.org
+created: "2025-01-01"
+modified: "2025-01-01"
+specificationVersion: "0.18"
+tags:
+- Open Source
+- ASF
+maintainers:
+- FN: Kin Lane
+  email: info@apievangelist.com
