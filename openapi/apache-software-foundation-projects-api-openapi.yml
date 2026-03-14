@@ -1,0 +1,271 @@
+openapi: 3.1.0
+info:
+  title: Apache Software Foundation Projects API
+  description: >-
+    The Apache Software Foundation Projects API provides read-only access to
+    JSON data about ASF projects, committees, releases, and podlings. The data
+    is served as static JSON files from projects.apache.org and includes
+    comprehensive information about the foundation's structure, project
+    metadata, committee membership, release histories, and incubating podlings.
+  version: 1.0.0
+  contact:
+    name: Apache Software Foundation
+    url: https://www.apache.org
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: https://projects.apache.org/json
+    description: ASF Projects JSON Data
+paths:
+  /foundation/groups.json:
+    get:
+      operationId: getGroups
+      summary: Get Foundation Groups
+      description: >-
+        Returns a JSON object containing all ASF groups (PMCs, committees,
+        and other organizational groups) and their members.
+      tags:
+        - Foundation
+      responses:
+        '200':
+          description: Successful response with foundation groups data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+  /foundation/committees.json:
+    get:
+      operationId: getCommittees
+      summary: Get All Committees
+      description: >-
+        Returns a JSON object containing information about all ASF Project
+        Management Committees (PMCs), including chair, description, homepage,
+        and roster.
+      tags:
+        - Committees
+      responses:
+        '200':
+          description: Successful response with committees data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/Committee'
+  /foundation/projects.json:
+    get:
+      operationId: getProjects
+      summary: Get All Projects
+      description: >-
+        Returns a JSON object containing metadata for all ASF top-level
+        projects, including name, description, category, PMC, programming
+        language, and repository information.
+      tags:
+        - Projects
+      responses:
+        '200':
+          description: Successful response with projects data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/Project'
+  /foundation/releases.json:
+    get:
+      operationId: getReleases
+      summary: Get All Releases
+      description: >-
+        Returns a JSON object containing release information for all ASF
+        projects, including version numbers and release dates.
+      tags:
+        - Releases
+      responses:
+        '200':
+          description: Successful response with releases data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Release'
+  /foundation/podlings.json:
+    get:
+      operationId: getPodlings
+      summary: Get All Podlings
+      description: >-
+        Returns a JSON object containing information about all ASF Incubator
+        podlings, including their status (current, graduated, retired),
+        start date, sponsor, mentors, and description.
+      tags:
+        - Podlings
+      responses:
+        '200':
+          description: Successful response with podlings data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/Podling'
+  /foundation/people.json:
+    get:
+      operationId: getPeople
+      summary: Get People
+      description: >-
+        Returns a JSON object mapping ASF member usernames to the list of
+        committees and groups they belong to.
+      tags:
+        - People
+      responses:
+        '200':
+          description: Successful response with people data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+  /foundation/people_name.json:
+    get:
+      operationId: getPeopleNames
+      summary: Get People Names
+      description: >-
+        Returns a JSON object mapping ASF member usernames to their
+        display names.
+      tags:
+        - People
+      responses:
+        '200':
+          description: Successful response with people names
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+components:
+  schemas:
+    Project:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The project name
+        category:
+          type: string
+          description: The project category
+        pmc:
+          type: string
+          description: The PMC responsible for the project
+        description:
+          type: string
+          description: A brief description of the project
+        homepage:
+          type: string
+          format: uri
+          description: The project homepage URL
+        programming-language:
+          type: string
+          description: Primary programming language
+        bug-database:
+          type: string
+          format: uri
+          description: URL of the bug tracker
+        download-page:
+          type: string
+          format: uri
+          description: URL of the downloads page
+        repository:
+          type: array
+          items:
+            type: string
+            format: uri
+          description: Source code repository URLs
+    Committee:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The committee display name
+        chair:
+          type: string
+          description: Username of the committee chair
+        description:
+          type: string
+          description: A brief description of the committee
+        homepage:
+          type: string
+          format: uri
+          description: The committee homepage URL
+        established:
+          type: string
+          description: Date the committee was established
+        group:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              date:
+                type: string
+          description: Members of the committee
+        roster_count:
+          type: integer
+          description: Number of members in the committee roster
+    Release:
+      type: object
+      properties:
+        version:
+          type: string
+          description: The release version string
+        date:
+          type: string
+          description: The release date
+    Podling:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The podling name
+        status:
+          type: string
+          enum:
+            - current
+            - graduated
+            - retired
+          description: Current status of the podling
+        startdate:
+          type: string
+          description: Date the podling entered incubation
+        enddate:
+          type: string
+          description: Date the podling left incubation
+        description:
+          type: string
+          description: A brief description of the podling
+        homepage:
+          type: string
+          format: uri
+          description: The podling homepage URL
+        sponsor:
+          type: string
+          description: The sponsoring PMC or entity
+        mentors:
+          type: array
+          items:
+            type: string
+          description: List of mentor usernames
+        champion:
+          type: string
+          description: Username of the podling champion

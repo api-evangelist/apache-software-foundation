@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "apache-software-foundation-committee-schema.json",
+  "title": "Apache Software Foundation Committee",
+  "description": "Schema for an Apache Software Foundation Project Management Committee (PMC) as returned by the Projects and Whimsy APIs.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The committee display name"
+    },
+    "chair": {
+      "type": "string",
+      "description": "Apache ID of the committee chair"
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the committee"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "description": "The committee homepage URL"
+    },
+    "established": {
+      "type": "string",
+      "description": "Date the committee was established (e.g., 2002-01)"
+    },
+    "pmc": {
+      "type": "boolean",
+      "description": "Whether this is a Project Management Committee"
+    },
+    "report": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Reporting schedule months (e.g., ['January', 'April', 'July', 'October'])"
+    },
+    "roster": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the member"
+          },
+          "date": {
+            "type": "string",
+            "description": "Date the member joined the committee"
+          }
+        }
+      },
+      "description": "Committee roster keyed by Apache ID"
+    },
+    "roster_count": {
+      "type": "integer",
+      "description": "Number of members in the committee roster"
+    }
+  },
+  "required": ["name"]
+}

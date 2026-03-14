@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "apache-software-foundation-project-schema.json",
+  "title": "Apache Software Foundation Project",
+  "description": "Schema for an Apache Software Foundation top-level project as returned by the Projects API.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The official project name"
+    },
+    "category": {
+      "type": "string",
+      "description": "The project category (e.g., big-data, cloud, library)"
+    },
+    "pmc": {
+      "type": "string",
+      "description": "The Project Management Committee responsible for this project"
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the project"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "description": "The project homepage URL"
+    },
+    "programming-language": {
+      "type": "string",
+      "description": "Primary programming language used by the project"
+    },
+    "bug-database": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the project bug tracker"
+    },
+    "download-page": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the project downloads page"
+    },
+    "mailing-list": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the project mailing list archives"
+    },
+    "repository": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "Source code repository URLs"
+    },
+    "license": {
+      "type": "string",
+      "description": "The software license (typically Apache-2.0)"
+    },
+    "shortdesc": {
+      "type": "string",
+      "description": "A short one-line description of the project"
+    }
+  },
+  "required": ["name"]
+}
