@@ -269,3 +269,10 @@ components:
         champion:
           type: string
           description: Username of the podling champion
+tags:
+  - name: Committees
+  - name: Foundation
+  - name: People
+  - name: Podlings
+  - name: Projects
+  - name: Releases

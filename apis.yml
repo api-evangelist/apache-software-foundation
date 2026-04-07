@@ -5,9 +5,9 @@ apis:
   - aid: apache-software-foundation:projects-api
     name: Apache Software Foundation Projects API
     tags:
+      - Committees
       - Open Source
       - Projects
-      - Committees
     humanURL: https://projects.apache.org/
     properties:
       - url: https://projects.apache.org/
@@ -29,9 +29,9 @@ apis:
   - aid: apache-software-foundation:whimsy-api
     name: Apache Software Foundation Whimsy Public Data API
     tags:
-      - Open Source
       - Governance
       - Members
+      - Open Source
     humanURL: https://whimsy.apache.org/public/
     properties:
       - url: https://whimsy.apache.org/public/
@@ -46,8 +46,8 @@ apis:
       is maintained by the ASF Secretary and Whimsy tooling.
 name: Apache Software Foundation
 tags:
-  - Open Source
   - ASF
+  - Open Source
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party

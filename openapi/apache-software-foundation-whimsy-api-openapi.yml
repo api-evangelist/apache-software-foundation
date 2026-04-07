@@ -268,3 +268,10 @@ components:
         enddate:
           type: string
           description: Incubation end date if applicable
+tags:
+  - name: Committees
+  - name: Groups
+  - name: ICLA
+  - name: Members
+  - name: People
+  - name: Podlings
