@@ -21,7 +21,7 @@ paths:
   /foundation/groups.json:
     get:
       operationId: getGroups
-      summary: Get Foundation Groups
+      summary: Apache Software Foundation Get Foundation Groups
       description: >-
         Returns a JSON object containing all ASF groups (PMCs, committees,
         and other organizational groups) and their members.
@@ -41,7 +41,7 @@ paths:
   /foundation/committees.json:
     get:
       operationId: getCommittees
-      summary: Get All Committees
+      summary: Apache Software Foundation Get All Committees
       description: >-
         Returns a JSON object containing information about all ASF Project
         Management Committees (PMCs), including chair, description, homepage,
@@ -60,7 +60,7 @@ paths:
   /foundation/projects.json:
     get:
       operationId: getProjects
-      summary: Get All Projects
+      summary: Apache Software Foundation Get All Projects
       description: >-
         Returns a JSON object containing metadata for all ASF top-level
         projects, including name, description, category, PMC, programming
@@ -79,7 +79,7 @@ paths:
   /foundation/releases.json:
     get:
       operationId: getReleases
-      summary: Get All Releases
+      summary: Apache Software Foundation Get All Releases
       description: >-
         Returns a JSON object containing release information for all ASF
         projects, including version numbers and release dates.
@@ -99,7 +99,7 @@ paths:
   /foundation/podlings.json:
     get:
       operationId: getPodlings
-      summary: Get All Podlings
+      summary: Apache Software Foundation Get All Podlings
       description: >-
         Returns a JSON object containing information about all ASF Incubator
         podlings, including their status (current, graduated, retired),
@@ -118,7 +118,7 @@ paths:
   /foundation/people.json:
     get:
       operationId: getPeople
-      summary: Get People
+      summary: Apache Software Foundation Get People
       description: >-
         Returns a JSON object mapping ASF member usernames to the list of
         committees and groups they belong to.
@@ -138,7 +138,7 @@ paths:
   /foundation/people_name.json:
     get:
       operationId: getPeopleNames
-      summary: Get People Names
+      summary: Apache Software Foundation Get People Names
       description: >-
         Returns a JSON object mapping ASF member usernames to their
         display names.

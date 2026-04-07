@@ -21,7 +21,7 @@ paths:
   /committee-info.json:
     get:
       operationId: getCommitteeInfo
-      summary: Get Committee Info
+      summary: Apache Software Foundation Get Committee Info
       description: >-
         Returns detailed information about all ASF committees (PMCs),
         including their chairs, established dates, reporting schedules,
@@ -46,7 +46,7 @@ paths:
   /public_ldap_committees.json:
     get:
       operationId: getPublicLdapCommittees
-      summary: Get LDAP Committee Data
+      summary: Apache Software Foundation Get LDAP Committee Data
       description: >-
         Returns committee data sourced from ASF LDAP, listing all PMCs
         and their member rosters by Apache ID.
@@ -74,7 +74,7 @@ paths:
   /public_ldap_groups.json:
     get:
       operationId: getPublicLdapGroups
-      summary: Get LDAP Groups Data
+      summary: Apache Software Foundation Get LDAP Groups Data
       description: >-
         Returns Unix group data sourced from ASF LDAP, listing all groups
         and their member rosters by Apache ID.
@@ -97,7 +97,7 @@ paths:
   /public_ldap_people.json:
     get:
       operationId: getPublicLdapPeople
-      summary: Get LDAP People Data
+      summary: Apache Software Foundation Get LDAP People Data
       description: >-
         Returns public people data from ASF LDAP, including display names
         and group memberships for all committers.
@@ -127,7 +127,7 @@ paths:
   /icla-info.json:
     get:
       operationId: getIclaInfo
-      summary: Get ICLA Information
+      summary: Apache Software Foundation Get ICLA Information
       description: >-
         Returns public ICLA (Individual Contributor License Agreement)
         information, listing committers who have signed ICLAs along with
@@ -155,7 +155,7 @@ paths:
   /member-info.json:
     get:
       operationId: getMemberInfo
-      summary: Get Member Information
+      summary: Apache Software Foundation Get Member Information
       description: >-
         Returns publicly available information about ASF members,
         including member status and availability data.
@@ -183,7 +183,7 @@ paths:
   /public_podlings.json:
     get:
       operationId: getPublicPodlings
-      summary: Get Podlings Data
+      summary: Apache Software Foundation Get Podlings Data
       description: >-
         Returns information about incubator podlings, including their
         status, description, sponsor, mentors, and key dates.
