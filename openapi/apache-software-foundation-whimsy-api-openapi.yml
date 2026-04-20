@@ -15,8 +15,8 @@ info:
     name: Apache License 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
 servers:
-  - url: https://whimsy.apache.org/public
-    description: Whimsy Public Data Server
+- url: https://whimsy.apache.org/public
+  description: Whimsy Public Data Server
 paths:
   /committee-info.json:
     get:
@@ -27,7 +27,7 @@ paths:
         including their chairs, established dates, reporting schedules,
         and full member rosters with join dates.
       tags:
-        - Committees
+      - Committees
       responses:
         '200':
           description: Successful response with committee information
@@ -43,6 +43,14 @@ paths:
                   last_updated:
                     type: string
                     description: Timestamp of last data update
+              examples:
+                GetCommitteeInfo200Example:
+                  summary: Default getCommitteeInfo 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /public_ldap_committees.json:
     get:
       operationId: getPublicLdapCommittees
@@ -51,7 +59,7 @@ paths:
         Returns committee data sourced from ASF LDAP, listing all PMCs
         and their member rosters by Apache ID.
       tags:
-        - Committees
+      - Committees
       responses:
         '200':
           description: Successful response with LDAP committee data
@@ -71,6 +79,14 @@ paths:
                             type: string
                   last_updated:
                     type: string
+              examples:
+                GetPublicLdapCommittees200Example:
+                  summary: Default getPublicLdapCommittees 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /public_ldap_groups.json:
     get:
       operationId: getPublicLdapGroups
@@ -79,7 +95,7 @@ paths:
         Returns Unix group data sourced from ASF LDAP, listing all groups
         and their member rosters by Apache ID.
       tags:
-        - Groups
+      - Groups
       responses:
         '200':
           description: Successful response with LDAP group data
@@ -94,6 +110,14 @@ paths:
                       type: array
                       items:
                         type: string
+              examples:
+                GetPublicLdapGroups200Example:
+                  summary: Default getPublicLdapGroups 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /public_ldap_people.json:
     get:
       operationId: getPublicLdapPeople
@@ -102,7 +126,7 @@ paths:
         Returns public people data from ASF LDAP, including display names
         and group memberships for all committers.
       tags:
-        - People
+      - People
       responses:
         '200':
           description: Successful response with LDAP people data
@@ -124,6 +148,14 @@ paths:
                             type: string
                   last_updated:
                     type: string
+              examples:
+                GetPublicLdapPeople200Example:
+                  summary: Default getPublicLdapPeople 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /icla-info.json:
     get:
       operationId: getIclaInfo
@@ -133,7 +165,7 @@ paths:
         information, listing committers who have signed ICLAs along with
         their public names.
       tags:
-        - ICLA
+      - ICLA
       responses:
         '200':
           description: Successful response with ICLA data
@@ -152,6 +184,14 @@ paths:
                           description: Public name of the committer
                   last_updated:
                     type: string
+              examples:
+                GetIclaInfo200Example:
+                  summary: Default getIclaInfo 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /member-info.json:
     get:
       operationId: getMemberInfo
@@ -160,7 +200,7 @@ paths:
         Returns publicly available information about ASF members,
         including member status and availability data.
       tags:
-        - Members
+      - Members
       responses:
         '200':
           description: Successful response with member information
@@ -180,6 +220,14 @@ paths:
                           type: string
                   last_updated:
                     type: string
+              examples:
+                GetMemberInfo200Example:
+                  summary: Default getMemberInfo 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /public_podlings.json:
     get:
       operationId: getPublicPodlings
@@ -188,7 +236,7 @@ paths:
         Returns information about incubator podlings, including their
         status, description, sponsor, mentors, and key dates.
       tags:
-        - Podlings
+      - Podlings
       responses:
         '200':
           description: Successful response with podlings data
@@ -203,6 +251,14 @@ paths:
                       $ref: '#/components/schemas/WhimsyPodling'
                   last_updated:
                     type: string
+              examples:
+                GetPublicPodlings200Example:
+                  summary: Default getPublicPodlings 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
 components:
   schemas:
     CommitteeInfo:
@@ -247,9 +303,9 @@ components:
         status:
           type: string
           enum:
-            - current
-            - graduated
-            - retired
+          - current
+          - graduated
+          - retired
           description: Current incubation status
         description:
           type: string
@@ -269,9 +325,9 @@ components:
           type: string
           description: Incubation end date if applicable
 tags:
-  - name: Committees
-  - name: Groups
-  - name: ICLA
-  - name: Members
-  - name: People
-  - name: Podlings
+- name: Committees
+- name: Groups
+- name: ICLA
+- name: Members
+- name: People
+- name: Podlings

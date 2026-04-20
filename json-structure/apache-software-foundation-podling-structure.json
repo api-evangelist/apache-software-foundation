@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-software-foundation/refs/heads/main/json-structure/apache-software-foundation-podling-structure.json",
+  "name": "Apache Software Foundation Podling",
+  "description": "Schema for an Apache Software Foundation Incubator podling as returned by the Projects and Whimsy APIs.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The podling display name"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "current",
+        "graduated",
+        "retired"
+      ],
+      "description": "Current incubation status of the podling"
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the podling"
+    },
+    "homepage": {
+      "type": "uri",
+      "description": "The podling homepage URL"
+    },
+    "startdate": {
+      "type": "string",
+      "description": "Date the podling entered incubation"
+    },
+    "enddate": {
+      "type": "string",
+      "description": "Date the podling left incubation (graduated or retired)"
+    },
+    "sponsor": {
+      "type": "string",
+      "description": "The sponsoring PMC or Incubator"
+    },
+    "champion": {
+      "type": "string",
+      "description": "Apache ID of the podling champion"
+    },
+    "mentors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of mentor Apache IDs"
+    },
+    "resolution": {
+      "type": "string",
+      "description": "Resolution details if the podling graduated or retired"
+    }
+  },
+  "required": [
+    "name",
+    "status"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "asf": "https://www.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Apache Software Foundation Project": "asf:Apache Software Foundation Project",
+    "Apache Software Foundation Committee": "asf:Apache Software Foundation Committee",
+    "Apache Software Foundation Podling": "asf:Apache Software Foundation Podling",
+    "name": "schema:name",
+    "category": {
+      "@id": "asf:category",
+      "@type": "xsd:string"
+    },
+    "pmc": {
+      "@id": "asf:pmc",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "homepage": {
+      "@id": "asf:homepage",
+      "@type": "@id"
+    },
+    "programming-language": {
+      "@id": "asf:programming-language",
+      "@type": "xsd:string"
+    },
+    "bug-database": {
+      "@id": "asf:bug-database",
+      "@type": "@id"
+    },
+    "download-page": {
+      "@id": "asf:download-page",
+      "@type": "@id"
+    },
+    "mailing-list": {
+      "@id": "asf:mailing-list",
+      "@type": "@id"
+    },
+    "repository": {
+      "@id": "asf:repository",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "license": {
+      "@id": "asf:license",
+      "@type": "xsd:string"
+    },
+    "shortdesc": {
+      "@id": "asf:shortdesc",
+      "@type": "xsd:string"
+    },
+    "chair": {
+      "@id": "asf:chair",
+      "@type": "xsd:string"
+    },
+    "established": {
+      "@id": "asf:established",
+      "@type": "xsd:string"
+    },
+    "report": {
+      "@id": "asf:report",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "roster": {
+      "@id": "asf:roster",
+      "@type": "@id"
+    },
+    "rosterCount": {
+      "@id": "asf:roster_count",
+      "@type": "xsd:integer"
+    },
+    "status": {
+      "@id": "asf:status",
+      "@type": "xsd:string"
+    },
+    "startdate": {
+      "@id": "asf:startdate",
+      "@type": "xsd:string"
+    },
+    "enddate": {
+      "@id": "asf:enddate",
+      "@type": "xsd:string"
+    },
+    "sponsor": {
+      "@id": "asf:sponsor",
+      "@type": "xsd:string"
+    },
+    "champion": {
+      "@id": "asf:champion",
+      "@type": "xsd:string"
+    },
+    "mentors": {
+      "@id": "asf:mentors",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "resolution": {
+      "@id": "asf:resolution",
+      "@type": "xsd:string"
+    }
+  }
+}

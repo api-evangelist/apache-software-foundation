@@ -1,0 +1,165 @@
+# Apache Software Foundation API Spectral Rules
+rules:
+
+  # INFO / METADATA
+  info-title-required:
+    description: Info title is required
+    severity: error
+    given: "$.info"
+    then:
+      field: title
+      function: truthy
+
+  info-description-required:
+    description: Info description is required and should be at least 30 characters
+    severity: warn
+    given: "$.info"
+    then:
+      field: description
+      function: truthy
+
+  info-version-required:
+    description: API version is required
+    severity: error
+    given: "$.info"
+    then:
+      field: version
+      function: truthy
+
+  info-license-required:
+    description: License information is required for ASF projects
+    severity: warn
+    given: "$.info"
+    then:
+      field: license
+      function: truthy
+
+  # OPENAPI VERSION
+  openapi-version-3:
+    description: Use OpenAPI 3.x
+    severity: error
+    given: "$"
+    then:
+      field: openapi
+      function: pattern
+      functionOptions:
+        match: "^3\\."
+
+  # SERVERS
+  servers-required:
+    description: Servers array is required
+    severity: error
+    given: "$"
+    then:
+      field: servers
+      function: truthy
+
+  servers-https:
+    description: All server URLs should use HTTPS
+    severity: warn
+    given: "$.servers[*].url"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  # OPERATIONS
+  operation-summary-required:
+    description: All operations must have a summary
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    then:
+      field: summary
+      function: truthy
+
+  operation-description-required:
+    description: All operations should have a description
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    then:
+      field: description
+      function: truthy
+
+  operation-operationid-required:
+    description: All operations must have an operationId
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    then:
+      field: operationId
+      function: truthy
+
+  operation-tags-required:
+    description: All operations must have at least one tag
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    then:
+      field: tags
+      function: truthy
+
+  operation-summary-prefix:
+    description: Operation summaries should start with "Apache Software Foundation"
+    severity: info
+    given: "$.paths[*][get,post,put,patch,delete,head,options].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Apache Software Foundation"
+
+  # RESPONSES
+  response-success-required:
+    description: Every operation should have at least one 2xx response
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete,head,options].responses"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          anyOf:
+            - required: ['200']
+            - required: ['201']
+            - required: ['204']
+
+  response-description-required:
+    description: All responses must have a description
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete,head,options].responses[*]"
+    then:
+      field: description
+      function: truthy
+
+  # SCHEMAS
+  schema-type-required:
+    description: All schema properties should have a type
+    severity: warn
+    given: "$.components.schemas[*].properties[*]"
+    then:
+      field: type
+      function: truthy
+
+  schema-description-required:
+    description: Top-level schemas should have descriptions
+    severity: info
+    given: "$.components.schemas[*]"
+    then:
+      field: description
+      function: truthy
+
+  # PATHS
+  paths-kebab-case:
+    description: Path segments should use kebab-case
+    severity: info
+    given: "$.paths[*]~"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(/[a-z0-9./_-]+)+$"
+
+  # GENERAL QUALITY
+  no-empty-descriptions:
+    description: Descriptions should not be empty strings
+    severity: warn
+    given: "$..description"
+    then:
+      function: pattern
+      functionOptions:
+        match: ".+"

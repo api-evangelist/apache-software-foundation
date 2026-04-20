@@ -15,8 +15,8 @@ info:
     name: Apache License 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
 servers:
-  - url: https://projects.apache.org/json
-    description: ASF Projects JSON Data
+- url: https://projects.apache.org/json
+  description: ASF Projects JSON Data
 paths:
   /foundation/groups.json:
     get:
@@ -26,7 +26,7 @@ paths:
         Returns a JSON object containing all ASF groups (PMCs, committees,
         and other organizational groups) and their members.
       tags:
-        - Foundation
+      - Foundation
       responses:
         '200':
           description: Successful response with foundation groups data
@@ -38,6 +38,14 @@ paths:
                   type: array
                   items:
                     type: string
+              examples:
+                GetGroups200Example:
+                  summary: Default getGroups 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /foundation/committees.json:
     get:
       operationId: getCommittees
@@ -47,7 +55,7 @@ paths:
         Management Committees (PMCs), including chair, description, homepage,
         and roster.
       tags:
-        - Committees
+      - Committees
       responses:
         '200':
           description: Successful response with committees data
@@ -57,6 +65,14 @@ paths:
                 type: object
                 additionalProperties:
                   $ref: '#/components/schemas/Committee'
+              examples:
+                GetCommittees200Example:
+                  summary: Default getCommittees 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /foundation/projects.json:
     get:
       operationId: getProjects
@@ -66,7 +82,7 @@ paths:
         projects, including name, description, category, PMC, programming
         language, and repository information.
       tags:
-        - Projects
+      - Projects
       responses:
         '200':
           description: Successful response with projects data
@@ -76,6 +92,14 @@ paths:
                 type: object
                 additionalProperties:
                   $ref: '#/components/schemas/Project'
+              examples:
+                GetProjects200Example:
+                  summary: Default getProjects 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /foundation/releases.json:
     get:
       operationId: getReleases
@@ -84,7 +108,7 @@ paths:
         Returns a JSON object containing release information for all ASF
         projects, including version numbers and release dates.
       tags:
-        - Releases
+      - Releases
       responses:
         '200':
           description: Successful response with releases data
@@ -96,6 +120,14 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/Release'
+              examples:
+                GetReleases200Example:
+                  summary: Default getReleases 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /foundation/podlings.json:
     get:
       operationId: getPodlings
@@ -105,7 +137,7 @@ paths:
         podlings, including their status (current, graduated, retired),
         start date, sponsor, mentors, and description.
       tags:
-        - Podlings
+      - Podlings
       responses:
         '200':
           description: Successful response with podlings data
@@ -115,6 +147,14 @@ paths:
                 type: object
                 additionalProperties:
                   $ref: '#/components/schemas/Podling'
+              examples:
+                GetPodlings200Example:
+                  summary: Default getPodlings 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /foundation/people.json:
     get:
       operationId: getPeople
@@ -123,7 +163,7 @@ paths:
         Returns a JSON object mapping ASF member usernames to the list of
         committees and groups they belong to.
       tags:
-        - People
+      - People
       responses:
         '200':
           description: Successful response with people data
@@ -135,6 +175,14 @@ paths:
                   type: array
                   items:
                     type: string
+              examples:
+                GetPeople200Example:
+                  summary: Default getPeople 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /foundation/people_name.json:
     get:
       operationId: getPeopleNames
@@ -143,7 +191,7 @@ paths:
         Returns a JSON object mapping ASF member usernames to their
         display names.
       tags:
-        - People
+      - People
       responses:
         '200':
           description: Successful response with people names
@@ -153,6 +201,14 @@ paths:
                 type: object
                 additionalProperties:
                   type: string
+              examples:
+                GetPeopleNames200Example:
+                  summary: Default getPeopleNames 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
 components:
   schemas:
     Project:
@@ -241,9 +297,9 @@ components:
         status:
           type: string
           enum:
-            - current
-            - graduated
-            - retired
+          - current
+          - graduated
+          - retired
           description: Current status of the podling
         startdate:
           type: string
@@ -270,9 +326,9 @@ components:
           type: string
           description: Username of the podling champion
 tags:
-  - name: Committees
-  - name: Foundation
-  - name: People
-  - name: Podlings
-  - name: Projects
-  - name: Releases
+- name: Committees
+- name: Foundation
+- name: People
+- name: Podlings
+- name: Projects
+- name: Releases

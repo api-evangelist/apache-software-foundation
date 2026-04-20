@@ -1,0 +1,17 @@
+{
+  "name": "Example Apache Project",
+  "category": "example-value",
+  "pmc": "example-value",
+  "description": "An example Apache Software Foundation project description.",
+  "homepage": "https://example.apache.org/project",
+  "programming-language": "example-value",
+  "bug-database": "https://example.apache.org",
+  "download-page": "https://example.apache.org",
+  "mailing-list": "https://example.apache.org",
+  "repository": [
+    "https://example.apache.org",
+    "https://example.apache.org"
+  ],
+  "license": "example-value",
+  "shortdesc": "example-value"
+}

@@ -1,0 +1,74 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Apache Software Foundation
+  description: Vocabulary taxonomy for the Apache Software Foundation Projects and Whimsy APIs, covering ASF organizational structure, project metadata, committee governance, and public member data.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: asf-projects
+      version: "1.0.0"
+      baseUrl: https://projects.apache.org/json
+      status: active
+    - namespace: asf-whimsy
+      version: "1.0.0"
+      baseUrl: https://whimsy.apache.org/public
+      status: active
+
+  resources:
+    - name: projects
+      apis: [asf-projects]
+      actions: [get]
+    - name: committees
+      apis: [asf-projects, asf-whimsy]
+      actions: [get]
+    - name: podlings
+      apis: [asf-projects]
+      actions: [get]
+    - name: releases
+      apis: [asf-projects]
+      actions: [get]
+    - name: groups
+      apis: [asf-projects, asf-whimsy]
+      actions: [get]
+    - name: members
+      apis: [asf-whimsy]
+      actions: [get]
+
+  actions:
+    - name: get
+      httpMethod: GET
+      pattern: read
+
+  schemas:
+    core:
+      - name: Project
+        description: ASF top-level project metadata
+        keyProperties: [name, description, category, pmc, programming_language]
+      - name: Committee
+        description: ASF Project Management Committee information
+        keyProperties: [name, chair, description, homepage, roster]
+      - name: Podling
+        description: ASF Incubator podling metadata
+        keyProperties: [name, description, status, champion, mentors]
+
+  authentication:
+    schemes:
+      - type: none
+        description: Public read-only APIs requiring no authentication
+
+crossReference:
+  - resource: projects
+    operations: [getProjects]
+    workflows: []
+    personas: [Developer, Researcher]
+  - resource: committees
+    operations: [getCommittees]
+    workflows: []
+    personas: [Developer, Administrator]
+  - resource: podlings
+    operations: [getPodlings]
+    workflows: []
+    personas: [Developer, Mentor]

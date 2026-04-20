@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-software-foundation/refs/heads/main/json-structure/apache-software-foundation-project-structure.json",
+  "name": "Apache Software Foundation Project",
+  "description": "Schema for an Apache Software Foundation top-level project as returned by the Projects API.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The official project name"
+    },
+    "category": {
+      "type": "string",
+      "description": "The project category (e.g., big-data, cloud, library)"
+    },
+    "pmc": {
+      "type": "string",
+      "description": "The Project Management Committee responsible for this project"
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the project"
+    },
+    "homepage": {
+      "type": "uri",
+      "description": "The project homepage URL"
+    },
+    "programming-language": {
+      "type": "string",
+      "description": "Primary programming language used by the project"
+    },
+    "bug-database": {
+      "type": "uri",
+      "description": "URL of the project bug tracker"
+    },
+    "download-page": {
+      "type": "uri",
+      "description": "URL of the project downloads page"
+    },
+    "mailing-list": {
+      "type": "uri",
+      "description": "URL of the project mailing list archives"
+    },
+    "repository": {
+      "type": "array",
+      "items": {
+        "type": "uri"
+      },
+      "description": "Source code repository URLs"
+    },
+    "license": {
+      "type": "string",
+      "description": "The software license (typically Apache-2.0)"
+    },
+    "shortdesc": {
+      "type": "string",
+      "description": "A short one-line description of the project"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

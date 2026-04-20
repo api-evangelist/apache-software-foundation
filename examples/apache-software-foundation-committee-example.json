@@ -1,0 +1,14 @@
+{
+  "name": "Example Apache Project",
+  "chair": "example-value",
+  "description": "An example Apache Software Foundation project description.",
+  "homepage": "https://example.apache.org/project",
+  "established": "example-value",
+  "pmc": true,
+  "report": [
+    "example-value",
+    "example-value"
+  ],
+  "roster": {},
+  "roster_count": 38
+}

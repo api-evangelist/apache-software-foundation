@@ -1,0 +1,15 @@
+{
+  "name": "Example Apache Project",
+  "status": "current",
+  "description": "An example Apache Software Foundation project description.",
+  "homepage": "https://example.apache.org/project",
+  "startdate": "2026-04-19T00:00:00Z",
+  "enddate": "2026-04-19T00:00:00Z",
+  "sponsor": "example-value",
+  "champion": "example-value",
+  "mentors": [
+    "example-value",
+    "example-value"
+  ],
+  "resolution": "example-value"
+}
