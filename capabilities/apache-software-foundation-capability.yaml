@@ -1,0 +1,249 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Software Foundation Projects API
+  description: The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees,
+    releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information
+    about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.
+  tags:
+  - Apache
+  - Software
+  - Foundation
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: apache-software-foundation
+    baseUri: https://projects.apache.org/json
+    description: Apache Software Foundation Projects API HTTP API.
+    resources:
+    - name: foundation-groups-json
+      path: /foundation/groups.json
+      operations:
+      - name: getgroups
+        method: GET
+        description: Apache Software Foundation Get Foundation Groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: foundation-committees-json
+      path: /foundation/committees.json
+      operations:
+      - name: getcommittees
+        method: GET
+        description: Apache Software Foundation Get All Committees
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: foundation-projects-json
+      path: /foundation/projects.json
+      operations:
+      - name: getprojects
+        method: GET
+        description: Apache Software Foundation Get All Projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: foundation-releases-json
+      path: /foundation/releases.json
+      operations:
+      - name: getreleases
+        method: GET
+        description: Apache Software Foundation Get All Releases
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: foundation-podlings-json
+      path: /foundation/podlings.json
+      operations:
+      - name: getpodlings
+        method: GET
+        description: Apache Software Foundation Get All Podlings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: foundation-people-json
+      path: /foundation/people.json
+      operations:
+      - name: getpeople
+        method: GET
+        description: Apache Software Foundation Get People
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: foundation-people-name-json
+      path: /foundation/people_name.json
+      operations:
+      - name: getpeoplenames
+        method: GET
+        description: Apache Software Foundation Get People Names
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: apache-software-foundation-rest
+    description: REST adapter for Apache Software Foundation Projects API.
+    resources:
+    - path: /foundation/groups.json
+      name: getgroups
+      operations:
+      - method: GET
+        name: getgroups
+        description: Apache Software Foundation Get Foundation Groups
+        call: apache-software-foundation.getgroups
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /foundation/committees.json
+      name: getcommittees
+      operations:
+      - method: GET
+        name: getcommittees
+        description: Apache Software Foundation Get All Committees
+        call: apache-software-foundation.getcommittees
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /foundation/projects.json
+      name: getprojects
+      operations:
+      - method: GET
+        name: getprojects
+        description: Apache Software Foundation Get All Projects
+        call: apache-software-foundation.getprojects
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /foundation/releases.json
+      name: getreleases
+      operations:
+      - method: GET
+        name: getreleases
+        description: Apache Software Foundation Get All Releases
+        call: apache-software-foundation.getreleases
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /foundation/podlings.json
+      name: getpodlings
+      operations:
+      - method: GET
+        name: getpodlings
+        description: Apache Software Foundation Get All Podlings
+        call: apache-software-foundation.getpodlings
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /foundation/people.json
+      name: getpeople
+      operations:
+      - method: GET
+        name: getpeople
+        description: Apache Software Foundation Get People
+        call: apache-software-foundation.getpeople
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /foundation/people_name.json
+      name: getpeoplenames
+      operations:
+      - method: GET
+        name: getpeoplenames
+        description: Apache Software Foundation Get People Names
+        call: apache-software-foundation.getpeoplenames
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: apache-software-foundation-mcp
+    transport: http
+    description: MCP adapter for Apache Software Foundation Projects API for AI agent use.
+    tools:
+    - name: getgroups
+      description: Apache Software Foundation Get Foundation Groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-software-foundation.getgroups
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcommittees
+      description: Apache Software Foundation Get All Committees
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-software-foundation.getcommittees
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getprojects
+      description: Apache Software Foundation Get All Projects
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-software-foundation.getprojects
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getreleases
+      description: Apache Software Foundation Get All Releases
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-software-foundation.getreleases
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpodlings
+      description: Apache Software Foundation Get All Podlings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-software-foundation.getpodlings
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpeople
+      description: Apache Software Foundation Get People
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-software-foundation.getpeople
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpeoplenames
+      description: Apache Software Foundation Get People Names
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apache-software-foundation.getpeoplenames
+      outputParameters:
+      - type: object
+        mapping: $.
