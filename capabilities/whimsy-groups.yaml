@@ -1,0 +1,68 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Software Foundation Whimsy Public Data API — Groups
+  description: 'Apache Software Foundation Whimsy Public Data API — Groups. 1 operations. Lead operation: Apache Software
+    Foundation Get LDAP Groups Data. Self-contained Naftiko capability covering one Apache Software Foundation business surface.'
+  tags:
+  - Apache Software Foundation
+  - Groups
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_SOFTWARE_FOUNDATION_API_KEY: APACHE_SOFTWARE_FOUNDATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: whimsy-groups
+    baseUri: https://whimsy.apache.org/public
+    description: Apache Software Foundation Whimsy Public Data API — Groups business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: public_ldap_groups.json
+      path: /public_ldap_groups.json
+      operations:
+      - name: getpublicldapgroups
+        method: GET
+        description: Apache Software Foundation Get LDAP Groups Data
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: whimsy-groups-rest
+    port: 8080
+    description: REST adapter for Apache Software Foundation Whimsy Public Data API — Groups. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/public-ldap-groups-json
+      name: public-ldap-groups-json
+      description: REST surface for public_ldap_groups.json.
+      operations:
+      - method: GET
+        name: getpublicldapgroups
+        description: Apache Software Foundation Get LDAP Groups Data
+        call: whimsy-groups.getpublicldapgroups
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: whimsy-groups-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache Software Foundation Whimsy Public Data API — Groups. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: apache-software-foundation-get-ldap
+      description: Apache Software Foundation Get LDAP Groups Data
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: whimsy-groups.getpublicldapgroups
+      outputParameters:
+      - type: object
+        mapping: $.

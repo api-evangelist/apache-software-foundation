@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Software Foundation Projects API — Projects
+  description: 'Apache Software Foundation Projects API — Projects. 1 operations. Lead operation: Apache Software Foundation
+    Get All Projects. Self-contained Naftiko capability covering one Apache Software Foundation business surface.'
+  tags:
+  - Apache Software Foundation
+  - Projects
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_SOFTWARE_FOUNDATION_API_KEY: APACHE_SOFTWARE_FOUNDATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: projects-projects
+    baseUri: https://projects.apache.org/json
+    description: Apache Software Foundation Projects API — Projects business capability. Self-contained, no shared references.
+    resources:
+    - name: foundation-projects.json
+      path: /foundation/projects.json
+      operations:
+      - name: getprojects
+        method: GET
+        description: Apache Software Foundation Get All Projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: projects-projects-rest
+    port: 8080
+    description: REST adapter for Apache Software Foundation Projects API — Projects. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/foundation/projects-json
+      name: foundation-projects-json
+      description: REST surface for foundation-projects.json.
+      operations:
+      - method: GET
+        name: getprojects
+        description: Apache Software Foundation Get All Projects
+        call: projects-projects.getprojects
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: projects-projects-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache Software Foundation Projects API — Projects. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: apache-software-foundation-get-all
+      description: Apache Software Foundation Get All Projects
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: projects-projects.getprojects
+      outputParameters:
+      - type: object
+        mapping: $.

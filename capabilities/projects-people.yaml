@@ -1,0 +1,99 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Software Foundation Projects API — People
+  description: 'Apache Software Foundation Projects API — People. 2 operations. Lead operation: Apache Software Foundation
+    Get People. Self-contained Naftiko capability covering one Apache Software Foundation business surface.'
+  tags:
+  - Apache Software Foundation
+  - People
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_SOFTWARE_FOUNDATION_API_KEY: APACHE_SOFTWARE_FOUNDATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: projects-people
+    baseUri: https://projects.apache.org/json
+    description: Apache Software Foundation Projects API — People business capability. Self-contained, no shared references.
+    resources:
+    - name: foundation-people.json
+      path: /foundation/people.json
+      operations:
+      - name: getpeople
+        method: GET
+        description: Apache Software Foundation Get People
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: foundation-people_name.json
+      path: /foundation/people_name.json
+      operations:
+      - name: getpeoplenames
+        method: GET
+        description: Apache Software Foundation Get People Names
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: projects-people-rest
+    port: 8080
+    description: REST adapter for Apache Software Foundation Projects API — People. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/foundation/people-json
+      name: foundation-people-json
+      description: REST surface for foundation-people.json.
+      operations:
+      - method: GET
+        name: getpeople
+        description: Apache Software Foundation Get People
+        call: projects-people.getpeople
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/foundation/people-name-json
+      name: foundation-people-name-json
+      description: REST surface for foundation-people_name.json.
+      operations:
+      - method: GET
+        name: getpeoplenames
+        description: Apache Software Foundation Get People Names
+        call: projects-people.getpeoplenames
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: projects-people-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache Software Foundation Projects API — People. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: apache-software-foundation-get-people
+      description: Apache Software Foundation Get People
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: projects-people.getpeople
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-software-foundation-get-people-2
+      description: Apache Software Foundation Get People Names
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: projects-people.getpeoplenames
+      outputParameters:
+      - type: object
+        mapping: $.
