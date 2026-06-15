@@ -1,0 +1,577 @@
+{
+  "item": [
+    {
+      "id": "89fecd36-5fb8-4ef7-9f68-da44cc5ddf68",
+      "name": "Committees",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3b027e17-a5d1-4ebd-b825-7703dd96a26a",
+          "name": "Apache Software Foundation Get Committee Info",
+          "request": {
+            "name": "Apache Software Foundation Get Committee Info",
+            "description": {
+              "content": "Returns detailed information about all ASF committees (PMCs), including their chairs, established dates, reporting schedules, and full member rosters with join dates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "committee-info.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2147bad7-9df5-411c-8990-f449d1ae6f3a",
+              "name": "Successful response with committee information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "committee-info.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8a883f7-81cf-4bd1-bd05-2866a6387b65",
+          "name": "Apache Software Foundation Get LDAP Committee Data",
+          "request": {
+            "name": "Apache Software Foundation Get LDAP Committee Data",
+            "description": {
+              "content": "Returns committee data sourced from ASF LDAP, listing all PMCs and their member rosters by Apache ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "public_ldap_committees.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff0a3cfb-b157-4663-8c20-1bc4291ac5eb",
+              "name": "Successful response with LDAP committee data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public_ldap_committees.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f8ac924c-ac1e-459f-a9b4-6d1539976d3c",
+      "name": "Groups",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1365fada-23ec-4ac2-a3ed-25e6b1200fd5",
+          "name": "Apache Software Foundation Get LDAP Groups Data",
+          "request": {
+            "name": "Apache Software Foundation Get LDAP Groups Data",
+            "description": {
+              "content": "Returns Unix group data sourced from ASF LDAP, listing all groups and their member rosters by Apache ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "public_ldap_groups.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "67be5cc6-9e1d-450f-ab10-4c26c64413f5",
+              "name": "Successful response with LDAP group data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public_ldap_groups.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f0d3bbbd-873d-48d4-868b-fa2204e6c355",
+      "name": "ICLA",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3864f67a-f496-4eff-86e8-72a95d21f7d6",
+          "name": "Apache Software Foundation Get ICLA Information",
+          "request": {
+            "name": "Apache Software Foundation Get ICLA Information",
+            "description": {
+              "content": "Returns public ICLA (Individual Contributor License Agreement) information, listing committers who have signed ICLAs along with their public names.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "icla-info.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3c26536-c4d1-4bf9-b646-ddffb840137a",
+              "name": "Successful response with ICLA data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "icla-info.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5020821c-1199-4cfb-97e0-0f1927db275c",
+      "name": "Members",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca0861e2-bd85-4585-a0d8-ea83dce4eb2e",
+          "name": "Apache Software Foundation Get Member Information",
+          "request": {
+            "name": "Apache Software Foundation Get Member Information",
+            "description": {
+              "content": "Returns publicly available information about ASF members, including member status and availability data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "member-info.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8a5fd75-31b9-4389-b9fa-0d8bea262b55",
+              "name": "Successful response with member information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "member-info.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "170eafdb-c383-42a1-8204-82c511dee8bd",
+      "name": "People",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "15024adc-b393-4699-a3c4-54c731013685",
+          "name": "Apache Software Foundation Get LDAP People Data",
+          "request": {
+            "name": "Apache Software Foundation Get LDAP People Data",
+            "description": {
+              "content": "Returns public people data from ASF LDAP, including display names and group memberships for all committers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "public_ldap_people.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b62139d-c0b2-4dcc-b174-b3c22d4955c7",
+              "name": "Successful response with LDAP people data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public_ldap_people.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cc8f355e-0cc5-4536-b482-8de0040ddd27",
+      "name": "Podlings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f7b63d81-e468-4587-af84-132c52a748f5",
+          "name": "Apache Software Foundation Get Podlings Data",
+          "request": {
+            "name": "Apache Software Foundation Get Podlings Data",
+            "description": {
+              "content": "Returns information about incubator podlings, including their status, description, sponsor, mentors, and key dates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "public_podlings.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2ffa61b-5054-41d5-8628-984825847fa1",
+              "name": "Successful response with podlings data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public_podlings.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://whimsy.apache.org/public",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0dbf23d6-9b6a-4991-b948-38c20aae0472",
+    "name": "Apache Software Foundation Whimsy Public Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Apache Whimsy Public Data API provides access to publicly available information about the Apache Software Foundation's organizational structure. It exposes data about committees, members, committers, and ICLA (Individual Contributor License Agreement) information. The data is maintained by the ASF Secretary and Whimsy tooling.\n\nContact Support:\n Name: Apache Software Foundation",
+      "type": "text/plain"
+    }
+  }
+}

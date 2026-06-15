@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Software Foundation Whimsy Public Data API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Committees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get Committee Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://whimsy.apache.org/public/committee-info.json"
+          },
+          "docs": "Returns detailed information about all ASF committees (PMCs), including their chairs, established dates, reporting schedules, and full member rosters with join dates."
+        },
+        {
+          "info": {
+            "name": "Apache Software Foundation Get LDAP Committee Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://whimsy.apache.org/public/public_ldap_committees.json"
+          },
+          "docs": "Returns committee data sourced from ASF LDAP, listing all PMCs and their member rosters by Apache ID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get LDAP Groups Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://whimsy.apache.org/public/public_ldap_groups.json"
+          },
+          "docs": "Returns Unix group data sourced from ASF LDAP, listing all groups and their member rosters by Apache ID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get LDAP People Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://whimsy.apache.org/public/public_ldap_people.json"
+          },
+          "docs": "Returns public people data from ASF LDAP, including display names and group memberships for all committers."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ICLA",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get ICLA Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://whimsy.apache.org/public/icla-info.json"
+          },
+          "docs": "Returns public ICLA (Individual Contributor License Agreement) information, listing committers who have signed ICLAs along with their public names."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Members",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get Member Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://whimsy.apache.org/public/member-info.json"
+          },
+          "docs": "Returns publicly available information about ASF members, including member status and availability data."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Podlings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get Podlings Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://whimsy.apache.org/public/public_podlings.json"
+          },
+          "docs": "Returns information about incubator podlings, including their status, description, sponsor, mentors, and key dates."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

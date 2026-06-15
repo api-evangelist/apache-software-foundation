@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Software Foundation Projects API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Foundation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get Foundation Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/groups.json"
+          },
+          "docs": "Returns a JSON object containing all ASF groups (PMCs, committees, and other organizational groups) and their members."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Committees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get All Committees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/committees.json"
+          },
+          "docs": "Returns a JSON object containing information about all ASF Project Management Committees (PMCs), including chair, description, homepage, and roster."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get All Projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/projects.json"
+          },
+          "docs": "Returns a JSON object containing metadata for all ASF top-level projects, including name, description, category, PMC, programming language, and repository information."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Releases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get All Releases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/releases.json"
+          },
+          "docs": "Returns a JSON object containing release information for all ASF projects, including version numbers and release dates."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Podlings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get All Podlings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/podlings.json"
+          },
+          "docs": "Returns a JSON object containing information about all ASF Incubator podlings, including their status (current, graduated, retired), start date, sponsor, mentors, and description."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get People",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/people.json"
+          },
+          "docs": "Returns a JSON object mapping ASF member usernames to the list of committees and groups they belong to."
+        },
+        {
+          "info": {
+            "name": "Apache Software Foundation Get People Names",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/people_name.json"
+          },
+          "docs": "Returns a JSON object mapping ASF member usernames to their display names."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

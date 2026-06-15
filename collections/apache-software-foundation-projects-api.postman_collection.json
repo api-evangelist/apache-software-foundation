@@ -1,0 +1,591 @@
+{
+  "item": [
+    {
+      "id": "b8819e64-75b3-4f1f-96ce-c9a338cec2d6",
+      "name": "Committees",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "622a0485-491c-482c-b6ea-698c145bc23c",
+          "name": "Apache Software Foundation Get All Committees",
+          "request": {
+            "name": "Apache Software Foundation Get All Committees",
+            "description": {
+              "content": "Returns a JSON object containing information about all ASF Project Management Committees (PMCs), including chair, description, homepage, and roster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "foundation",
+                "committees.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d44659c0-93c2-42d4-b6a3-f6e83cf0c92e",
+              "name": "Successful response with committees data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foundation",
+                    "committees.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6b228486-03b4-46fb-ace4-b58f93cd66ac",
+      "name": "Foundation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cabce609-6fee-4c13-abb4-f1fc161d2d2d",
+          "name": "Apache Software Foundation Get Foundation Groups",
+          "request": {
+            "name": "Apache Software Foundation Get Foundation Groups",
+            "description": {
+              "content": "Returns a JSON object containing all ASF groups (PMCs, committees, and other organizational groups) and their members.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "foundation",
+                "groups.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6adeed19-92cc-4613-91f1-b6cb87721426",
+              "name": "Successful response with foundation groups data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foundation",
+                    "groups.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7f3321a6-076f-443d-95bc-05bd9c259a0c",
+      "name": "People",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "53f68553-2f54-481d-bbc7-4bd9733cf4c7",
+          "name": "Apache Software Foundation Get People",
+          "request": {
+            "name": "Apache Software Foundation Get People",
+            "description": {
+              "content": "Returns a JSON object mapping ASF member usernames to the list of committees and groups they belong to.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "foundation",
+                "people.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0477a44b-564a-47ad-aff8-0f3de26ad941",
+              "name": "Successful response with people data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foundation",
+                    "people.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fd2ce676-845e-443f-b9a9-c8b697b02fb9",
+          "name": "Apache Software Foundation Get People Names",
+          "request": {
+            "name": "Apache Software Foundation Get People Names",
+            "description": {
+              "content": "Returns a JSON object mapping ASF member usernames to their display names.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "foundation",
+                "people_name.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a002a198-66f5-4dca-8481-7c43b8183128",
+              "name": "Successful response with people names",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foundation",
+                    "people_name.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8be555bc-2ab4-4327-8164-9f1cb034c964",
+      "name": "Podlings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "76c0bc1c-b61f-4286-93d9-4518c04ec3a2",
+          "name": "Apache Software Foundation Get All Podlings",
+          "request": {
+            "name": "Apache Software Foundation Get All Podlings",
+            "description": {
+              "content": "Returns a JSON object containing information about all ASF Incubator podlings, including their status (current, graduated, retired), start date, sponsor, mentors, and description.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "foundation",
+                "podlings.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7145af9e-cb58-4d4b-8d0e-d0cb3504df70",
+              "name": "Successful response with podlings data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foundation",
+                    "podlings.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "04777763-e676-43cf-9f8c-b9c7a1ff5932",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3c08bb51-0932-48e4-bc9b-a12d1c4807c3",
+          "name": "Apache Software Foundation Get All Projects",
+          "request": {
+            "name": "Apache Software Foundation Get All Projects",
+            "description": {
+              "content": "Returns a JSON object containing metadata for all ASF top-level projects, including name, description, category, PMC, programming language, and repository information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "foundation",
+                "projects.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "935bd90e-424b-43a8-b9f3-c038aaf65903",
+              "name": "Successful response with projects data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foundation",
+                    "projects.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "71da7ee9-6a9f-4458-8f18-4cdca7c3e573",
+      "name": "Releases",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9301391f-1817-4c73-99e8-6a76e6b1f885",
+          "name": "Apache Software Foundation Get All Releases",
+          "request": {
+            "name": "Apache Software Foundation Get All Releases",
+            "description": {
+              "content": "Returns a JSON object containing release information for all ASF projects, including version numbers and release dates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "foundation",
+                "releases.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7752c09f-a05a-4e88-acfa-d0aa15ff1978",
+              "name": "Successful response with releases data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foundation",
+                    "releases.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://projects.apache.org/json",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b7997ffa-e69a-412a-9fe1-382f87719f54",
+    "name": "Apache Software Foundation Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.\n\nContact Support:\n Name: Apache Software Foundation",
+      "type": "text/plain"
+    }
+  }
+}
