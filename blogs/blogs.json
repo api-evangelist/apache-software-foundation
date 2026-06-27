@@ -2,11 +2,11 @@
   "repo": "apache-software-foundation",
   "feeds": [
     {
-      "source": "https://blogsarchive.apache.org/",
+      "source": "https://blogsarchive.apache.org/feed.xml",
       "feed_url": "https://blogsarchive.apache.org/feed.xml",
       "title": "",
       "saved": 0,
-      "method": "discovered"
+      "method": "feed"
     },
     {
       "source": "https://www.apache.org/",
@@ -17,5 +17,5 @@
     }
   ],
   "post_count": 16,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:03:07Z"
 }
