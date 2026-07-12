@@ -63,6 +63,10 @@ apis:
       - type: OpenAPI
         url: openapi/apache-software-foundation-whimsy-api-openapi.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/apache-software-foundation-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/apache-software-foundation-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/the-apache-software-foundation
   - type: Portal
