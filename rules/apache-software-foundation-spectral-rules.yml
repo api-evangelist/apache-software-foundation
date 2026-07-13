@@ -1,165 +1,190 @@
-# Apache Software Foundation API Spectral Rules
+# apache-software-foundation — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - servers-expected-domain: 2/2 servers on apache.org
+#   - operationid-casing: camel @ 100% (n=14)
+#   - schema-names-casing: pascal @ 100% (n=6)
+#   - schema-properties-casing: snake @ 93% (n=41)
+#   - merge: kept 18 existing, added 4 measured, upgraded 0
+#   - added: servers-expected-domain, operationid-casing, schema-names-casing, schema-properties-casing
+extends:
+  - spectral:oas
 rules:
-
-  # INFO / METADATA
   info-title-required:
     description: Info title is required
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: title
       function: truthy
-
   info-description-required:
     description: Info description is required and should be at least 30 characters
     severity: warn
-    given: "$.info"
+    given: $.info
     then:
       field: description
       function: truthy
-
   info-version-required:
     description: API version is required
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: version
       function: truthy
-
   info-license-required:
     description: License information is required for ASF projects
     severity: warn
-    given: "$.info"
+    given: $.info
     then:
       field: license
       function: truthy
-
-  # OPENAPI VERSION
   openapi-version-3:
     description: Use OpenAPI 3.x
     severity: error
-    given: "$"
+    given: $
     then:
       field: openapi
       function: pattern
       functionOptions:
-        match: "^3\\."
-
-  # SERVERS
+        match: ^3\.
   servers-required:
     description: Servers array is required
     severity: error
-    given: "$"
+    given: $
     then:
       field: servers
       function: truthy
-
   servers-https:
     description: All server URLs should use HTTPS
     severity: warn
-    given: "$.servers[*].url"
+    given: $.servers[*].url
     then:
       function: pattern
       functionOptions:
-        match: "^https://"
-
-  # OPERATIONS
+        match: ^https://
   operation-summary-required:
     description: All operations must have a summary
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    given: $.paths[*][get,post,put,patch,delete,head,options]
     then:
       field: summary
       function: truthy
-
   operation-description-required:
     description: All operations should have a description
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    given: $.paths[*][get,post,put,patch,delete,head,options]
     then:
       field: description
       function: truthy
-
   operation-operationid-required:
     description: All operations must have an operationId
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    given: $.paths[*][get,post,put,patch,delete,head,options]
     then:
       field: operationId
       function: truthy
-
   operation-tags-required:
     description: All operations must have at least one tag
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete,head,options]"
+    given: $.paths[*][get,post,put,patch,delete,head,options]
     then:
       field: tags
       function: truthy
-
   operation-summary-prefix:
     description: Operation summaries should start with "Apache Software Foundation"
     severity: info
-    given: "$.paths[*][get,post,put,patch,delete,head,options].summary"
+    given: $.paths[*][get,post,put,patch,delete,head,options].summary
     then:
       function: pattern
       functionOptions:
-        match: "^Apache Software Foundation"
-
-  # RESPONSES
+        match: ^Apache Software Foundation
   response-success-required:
     description: Every operation should have at least one 2xx response
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete,head,options].responses"
+    given: $.paths[*][get,post,put,patch,delete,head,options].responses
     then:
       function: schema
       functionOptions:
         schema:
           anyOf:
-            - required: ['200']
-            - required: ['201']
-            - required: ['204']
-
+          - required:
+            - '200'
+          - required:
+            - '201'
+          - required:
+            - '204'
   response-description-required:
     description: All responses must have a description
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete,head,options].responses[*]"
+    given: $.paths[*][get,post,put,patch,delete,head,options].responses[*]
     then:
       field: description
       function: truthy
-
-  # SCHEMAS
   schema-type-required:
     description: All schema properties should have a type
     severity: warn
-    given: "$.components.schemas[*].properties[*]"
+    given: $.components.schemas[*].properties[*]
     then:
       field: type
       function: truthy
-
   schema-description-required:
     description: Top-level schemas should have descriptions
     severity: info
-    given: "$.components.schemas[*]"
+    given: $.components.schemas[*]
     then:
       field: description
       function: truthy
-
-  # PATHS
   paths-kebab-case:
     description: Path segments should use kebab-case
     severity: info
-    given: "$.paths[*]~"
+    given: $.paths[*]~
     then:
       function: pattern
       functionOptions:
-        match: "^(/[a-z0-9./_-]+)+$"
-
-  # GENERAL QUALITY
+        match: ^(/[a-z0-9./_-]+)+$
   no-empty-descriptions:
     description: Descriptions should not be empty strings
     severity: warn
-    given: "$..description"
+    given: $..description
     then:
       function: pattern
       functionOptions:
-        match: ".+"
+        match: .+
+  servers-expected-domain:
+    description: Server URLs should be on the apache.org domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: apache\.org
+  operationid-casing:
+    description: Operation IDs should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
