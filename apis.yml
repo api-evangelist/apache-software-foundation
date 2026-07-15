@@ -63,6 +63,8 @@ apis:
       - type: OpenAPI
         url: openapi/apache-software-foundation-whimsy-api-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/apache-software-foundation-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/apache-software-foundation-vulnerability-disclosure.yml
   - type: DomainSecurity
