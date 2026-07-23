@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: Apache Software Foundation Projects Committees ICLA API
+  description: The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.
+  version: 1.0.0
+  contact:
+    name: Apache Software Foundation
+    url: https://www.apache.org
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://projects.apache.org/json
+  description: ASF Projects JSON Data
+tags:
+- name: ICLA
+paths:
+  /icla-info.json:
+    get:
+      operationId: getIclaInfo
+      summary: Apache Software Foundation Get ICLA Information
+      description: Returns public ICLA (Individual Contributor License Agreement) information, listing committers who have signed ICLAs along with their public names.
+      tags:
+      - ICLA
+      responses:
+        '200':
+          description: Successful response with ICLA data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  committers:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Public name of the committer
+                  last_updated:
+                    type: string
+              examples:
+                GetIclaInfo200Example:
+                  summary: Default getIclaInfo 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK

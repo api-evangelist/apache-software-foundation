@@ -1,0 +1,54 @@
+openapi: 3.1.0
+info:
+  title: Apache Software Foundation Projects Committees Releases API
+  description: The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.
+  version: 1.0.0
+  contact:
+    name: Apache Software Foundation
+    url: https://www.apache.org
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://projects.apache.org/json
+  description: ASF Projects JSON Data
+tags:
+- name: Releases
+paths:
+  /foundation/releases.json:
+    get:
+      operationId: getReleases
+      summary: Apache Software Foundation Get All Releases
+      description: Returns a JSON object containing release information for all ASF projects, including version numbers and release dates.
+      tags:
+      - Releases
+      responses:
+        '200':
+          description: Successful response with releases data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Release'
+              examples:
+                GetReleases200Example:
+                  summary: Default getReleases 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Release:
+      type: object
+      properties:
+        version:
+          type: string
+          description: The release version string
+        date:
+          type: string
+          description: The release date

@@ -1,0 +1,103 @@
+openapi: 3.1.0
+info:
+  title: Apache Software Foundation Projects Committees People API
+  description: The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.
+  version: 1.0.0
+  contact:
+    name: Apache Software Foundation
+    url: https://www.apache.org
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://projects.apache.org/json
+  description: ASF Projects JSON Data
+tags:
+- name: People
+paths:
+  /foundation/people.json:
+    get:
+      operationId: getPeople
+      summary: Apache Software Foundation Get People
+      description: Returns a JSON object mapping ASF member usernames to the list of committees and groups they belong to.
+      tags:
+      - People
+      responses:
+        '200':
+          description: Successful response with people data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+              examples:
+                GetPeople200Example:
+                  summary: Default getPeople 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /foundation/people_name.json:
+    get:
+      operationId: getPeopleNames
+      summary: Apache Software Foundation Get People Names
+      description: Returns a JSON object mapping ASF member usernames to their display names.
+      tags:
+      - People
+      responses:
+        '200':
+          description: Successful response with people names
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+              examples:
+                GetPeopleNames200Example:
+                  summary: Default getPeopleNames 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /public_ldap_people.json:
+    get:
+      operationId: getPublicLdapPeople
+      summary: Apache Software Foundation Get LDAP People Data
+      description: Returns public people data from ASF LDAP, including display names and group memberships for all committers.
+      tags:
+      - People
+      responses:
+        '200':
+          description: Successful response with LDAP people data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  people:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        key_fingerprints:
+                          type: array
+                          items:
+                            type: string
+                  last_updated:
+                    type: string
+              examples:
+                GetPublicLdapPeople200Example:
+                  summary: Default getPublicLdapPeople 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK

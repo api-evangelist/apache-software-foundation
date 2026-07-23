@@ -1,0 +1,139 @@
+openapi: 3.1.0
+info:
+  title: Apache Software Foundation Projects Committees Podlings API
+  description: The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.
+  version: 1.0.0
+  contact:
+    name: Apache Software Foundation
+    url: https://www.apache.org
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://projects.apache.org/json
+  description: ASF Projects JSON Data
+tags:
+- name: Podlings
+paths:
+  /foundation/podlings.json:
+    get:
+      operationId: getPodlings
+      summary: Apache Software Foundation Get All Podlings
+      description: Returns a JSON object containing information about all ASF Incubator podlings, including their status (current, graduated, retired), start date, sponsor, mentors, and description.
+      tags:
+      - Podlings
+      responses:
+        '200':
+          description: Successful response with podlings data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/Podling'
+              examples:
+                GetPodlings200Example:
+                  summary: Default getPodlings 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /public_podlings.json:
+    get:
+      operationId: getPublicPodlings
+      summary: Apache Software Foundation Get Podlings Data
+      description: Returns information about incubator podlings, including their status, description, sponsor, mentors, and key dates.
+      tags:
+      - Podlings
+      responses:
+        '200':
+          description: Successful response with podlings data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  podling:
+                    type: object
+                    additionalProperties:
+                      $ref: '#/components/schemas/WhimsyPodling'
+                  last_updated:
+                    type: string
+              examples:
+                GetPublicPodlings200Example:
+                  summary: Default getPublicPodlings 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    WhimsyPodling:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Display name of the podling
+        status:
+          type: string
+          enum:
+          - current
+          - graduated
+          - retired
+          description: Current incubation status
+        description:
+          type: string
+          description: Brief description of the podling
+        mentors:
+          type: array
+          items:
+            type: string
+          description: List of mentor Apache IDs
+        sponsor:
+          type: string
+          description: Sponsoring entity
+        startdate:
+          type: string
+          description: Incubation start date
+        enddate:
+          type: string
+          description: Incubation end date if applicable
+    Podling:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The podling name
+        status:
+          type: string
+          enum:
+          - current
+          - graduated
+          - retired
+          description: Current status of the podling
+        startdate:
+          type: string
+          description: Date the podling entered incubation
+        enddate:
+          type: string
+          description: Date the podling left incubation
+        description:
+          type: string
+          description: A brief description of the podling
+        homepage:
+          type: string
+          format: uri
+          description: The podling homepage URL
+        sponsor:
+          type: string
+          description: The sponsoring PMC or entity
+        mentors:
+          type: array
+          items:
+            type: string
+          description: List of mentor usernames
+        champion:
+          type: string
+          description: Username of the podling champion

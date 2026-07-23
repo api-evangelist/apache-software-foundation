@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: Apache Software Foundation Projects Committees Members API
+  description: The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.
+  version: 1.0.0
+  contact:
+    name: Apache Software Foundation
+    url: https://www.apache.org
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://projects.apache.org/json
+  description: ASF Projects JSON Data
+tags:
+- name: Members
+paths:
+  /member-info.json:
+    get:
+      operationId: getMemberInfo
+      summary: Apache Software Foundation Get Member Information
+      description: Returns publicly available information about ASF members, including member status and availability data.
+      tags:
+      - Members
+      responses:
+        '200':
+          description: Successful response with member information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  members:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        status:
+                          type: string
+                  last_updated:
+                    type: string
+              examples:
+                GetMemberInfo200Example:
+                  summary: Default getMemberInfo 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK

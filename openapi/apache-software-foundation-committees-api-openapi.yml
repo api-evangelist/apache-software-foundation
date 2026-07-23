@@ -1,0 +1,172 @@
+openapi: 3.1.0
+info:
+  title: Apache Software Foundation Projects Committees API
+  description: The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.
+  version: 1.0.0
+  contact:
+    name: Apache Software Foundation
+    url: https://www.apache.org
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://projects.apache.org/json
+  description: ASF Projects JSON Data
+tags:
+- name: Committees
+paths:
+  /foundation/committees.json:
+    get:
+      operationId: getCommittees
+      summary: Apache Software Foundation Get All Committees
+      description: Returns a JSON object containing information about all ASF Project Management Committees (PMCs), including chair, description, homepage, and roster.
+      tags:
+      - Committees
+      responses:
+        '200':
+          description: Successful response with committees data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/Committee'
+              examples:
+                GetCommittees200Example:
+                  summary: Default getCommittees 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /committee-info.json:
+    get:
+      operationId: getCommitteeInfo
+      summary: Apache Software Foundation Get Committee Info
+      description: Returns detailed information about all ASF committees (PMCs), including their chairs, established dates, reporting schedules, and full member rosters with join dates.
+      tags:
+      - Committees
+      responses:
+        '200':
+          description: Successful response with committee information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  committees:
+                    type: object
+                    additionalProperties:
+                      $ref: '#/components/schemas/CommitteeInfo'
+                  last_updated:
+                    type: string
+                    description: Timestamp of last data update
+              examples:
+                GetCommitteeInfo200Example:
+                  summary: Default getCommitteeInfo 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /public_ldap_committees.json:
+    get:
+      operationId: getPublicLdapCommittees
+      summary: Apache Software Foundation Get LDAP Committee Data
+      description: Returns committee data sourced from ASF LDAP, listing all PMCs and their member rosters by Apache ID.
+      tags:
+      - Committees
+      responses:
+        '200':
+          description: Successful response with LDAP committee data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  committees:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        roster:
+                          type: array
+                          items:
+                            type: string
+                  last_updated:
+                    type: string
+              examples:
+                GetPublicLdapCommittees200Example:
+                  summary: Default getPublicLdapCommittees 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Committee:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The committee display name
+        chair:
+          type: string
+          description: Username of the committee chair
+        description:
+          type: string
+          description: A brief description of the committee
+        homepage:
+          type: string
+          format: uri
+          description: The committee homepage URL
+        established:
+          type: string
+          description: Date the committee was established
+        group:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              date:
+                type: string
+          description: Members of the committee
+        roster_count:
+          type: integer
+          description: Number of members in the committee roster
+    CommitteeInfo:
+      type: object
+      properties:
+        display_name:
+          type: string
+          description: Human-readable committee name
+        chair:
+          type: string
+          description: Apache ID of the committee chair
+        established:
+          type: string
+          description: Date the committee was established
+        report:
+          type: array
+          items:
+            type: string
+          description: Reporting schedule months
+        roster:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              date:
+                type: string
+          description: Committee roster with member details
+        pmc:
+          type: boolean
+          description: Whether this is a PMC
+        description:
+          type: string
+          description: Brief description of the committee
