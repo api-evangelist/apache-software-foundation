@@ -1,0 +1,333 @@
+openapi: 3.1.0
+info:
+  title: Apache Software Foundation Whimsy Public Data API
+  description: >-
+    The Apache Whimsy Public Data API provides access to publicly available
+    information about the Apache Software Foundation's organizational
+    structure. It exposes data about committees, members, committers, and
+    ICLA (Individual Contributor License Agreement) information. The data
+    is maintained by the ASF Secretary and Whimsy tooling.
+  version: 1.0.0
+  contact:
+    name: Apache Software Foundation
+    url: https://whimsy.apache.org
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://whimsy.apache.org/public
+  description: Whimsy Public Data Server
+paths:
+  /committee-info.json:
+    get:
+      operationId: getCommitteeInfo
+      summary: Apache Software Foundation Get Committee Info
+      description: >-
+        Returns detailed information about all ASF committees (PMCs),
+        including their chairs, established dates, reporting schedules,
+        and full member rosters with join dates.
+      tags:
+      - Committees
+      responses:
+        '200':
+          description: Successful response with committee information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  committees:
+                    type: object
+                    additionalProperties:
+                      $ref: '#/components/schemas/CommitteeInfo'
+                  last_updated:
+                    type: string
+                    description: Timestamp of last data update
+              examples:
+                GetCommitteeInfo200Example:
+                  summary: Default getCommitteeInfo 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /public_ldap_committees.json:
+    get:
+      operationId: getPublicLdapCommittees
+      summary: Apache Software Foundation Get LDAP Committee Data
+      description: >-
+        Returns committee data sourced from ASF LDAP, listing all PMCs
+        and their member rosters by Apache ID.
+      tags:
+      - Committees
+      responses:
+        '200':
+          description: Successful response with LDAP committee data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  committees:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        roster:
+                          type: array
+                          items:
+                            type: string
+                  last_updated:
+                    type: string
+              examples:
+                GetPublicLdapCommittees200Example:
+                  summary: Default getPublicLdapCommittees 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /public_ldap_groups.json:
+    get:
+      operationId: getPublicLdapGroups
+      summary: Apache Software Foundation Get LDAP Groups Data
+      description: >-
+        Returns Unix group data sourced from ASF LDAP, listing all groups
+        and their member rosters by Apache ID.
+      tags:
+      - Groups
+      responses:
+        '200':
+          description: Successful response with LDAP group data
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+                  properties:
+                    roster:
+                      type: array
+                      items:
+                        type: string
+              examples:
+                GetPublicLdapGroups200Example:
+                  summary: Default getPublicLdapGroups 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /public_ldap_people.json:
+    get:
+      operationId: getPublicLdapPeople
+      summary: Apache Software Foundation Get LDAP People Data
+      description: >-
+        Returns public people data from ASF LDAP, including display names
+        and group memberships for all committers.
+      tags:
+      - People
+      responses:
+        '200':
+          description: Successful response with LDAP people data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  people:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        key_fingerprints:
+                          type: array
+                          items:
+                            type: string
+                  last_updated:
+                    type: string
+              examples:
+                GetPublicLdapPeople200Example:
+                  summary: Default getPublicLdapPeople 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /icla-info.json:
+    get:
+      operationId: getIclaInfo
+      summary: Apache Software Foundation Get ICLA Information
+      description: >-
+        Returns public ICLA (Individual Contributor License Agreement)
+        information, listing committers who have signed ICLAs along with
+        their public names.
+      tags:
+      - ICLA
+      responses:
+        '200':
+          description: Successful response with ICLA data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  committers:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Public name of the committer
+                  last_updated:
+                    type: string
+              examples:
+                GetIclaInfo200Example:
+                  summary: Default getIclaInfo 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /member-info.json:
+    get:
+      operationId: getMemberInfo
+      summary: Apache Software Foundation Get Member Information
+      description: >-
+        Returns publicly available information about ASF members,
+        including member status and availability data.
+      tags:
+      - Members
+      responses:
+        '200':
+          description: Successful response with member information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  members:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        status:
+                          type: string
+                  last_updated:
+                    type: string
+              examples:
+                GetMemberInfo200Example:
+                  summary: Default getMemberInfo 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /public_podlings.json:
+    get:
+      operationId: getPublicPodlings
+      summary: Apache Software Foundation Get Podlings Data
+      description: >-
+        Returns information about incubator podlings, including their
+        status, description, sponsor, mentors, and key dates.
+      tags:
+      - Podlings
+      responses:
+        '200':
+          description: Successful response with podlings data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  podling:
+                    type: object
+                    additionalProperties:
+                      $ref: '#/components/schemas/WhimsyPodling'
+                  last_updated:
+                    type: string
+              examples:
+                GetPublicPodlings200Example:
+                  summary: Default getPublicPodlings 200 response
+                  x-microcks-default: true
+                  value: {}
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    CommitteeInfo:
+      type: object
+      properties:
+        display_name:
+          type: string
+          description: Human-readable committee name
+        chair:
+          type: string
+          description: Apache ID of the committee chair
+        established:
+          type: string
+          description: Date the committee was established
+        report:
+          type: array
+          items:
+            type: string
+          description: Reporting schedule months
+        roster:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              date:
+                type: string
+          description: Committee roster with member details
+        pmc:
+          type: boolean
+          description: Whether this is a PMC
+        description:
+          type: string
+          description: Brief description of the committee
+    WhimsyPodling:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Display name of the podling
+        status:
+          type: string
+          enum:
+          - current
+          - graduated
+          - retired
+          description: Current incubation status
+        description:
+          type: string
+          description: Brief description of the podling
+        mentors:
+          type: array
+          items:
+            type: string
+          description: List of mentor Apache IDs
+        sponsor:
+          type: string
+          description: Sponsoring entity
+        startdate:
+          type: string
+          description: Incubation start date
+        enddate:
+          type: string
+          description: Incubation end date if applicable
+tags:
+- name: Committees
+- name: Groups
+- name: ICLA
+- name: Members
+- name: People
+- name: Podlings

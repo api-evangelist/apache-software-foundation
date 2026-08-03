@@ -1,0 +1,30 @@
+{
+  "provider": "apache-software-foundation",
+  "sources": [
+    "apache-software-foundation-committees-api-openapi.yml",
+    "apache-software-foundation-foundation-api-openapi.yml",
+    "apache-software-foundation-groups-api-openapi.yml",
+    "apache-software-foundation-icla-api-openapi.yml",
+    "apache-software-foundation-members-api-openapi.yml",
+    "apache-software-foundation-people-api-openapi.yml",
+    "apache-software-foundation-podlings-api-openapi.yml",
+    "apache-software-foundation-projects-api-openapi.yml",
+    "apache-software-foundation-releases-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-software-foundation-committees-api-openapi.yml",
+    "apache-software-foundation-foundation-api-openapi.yml",
+    "apache-software-foundation-groups-api-openapi.yml",
+    "apache-software-foundation-icla-api-openapi.yml",
+    "apache-software-foundation-members-api-openapi.yml",
+    "apache-software-foundation-people-api-openapi.yml",
+    "apache-software-foundation-podlings-api-openapi.yml",
+    "apache-software-foundation-projects-api-openapi.yml",
+    "apache-software-foundation-releases-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
