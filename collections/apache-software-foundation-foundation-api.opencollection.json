@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Software Projects Committees Foundation API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Foundation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get Foundation Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/groups.json"
+          },
+          "docs": "Returns a JSON object containing all ASF groups (PMCs, committees, and other organizational groups) and their members."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Software Foundation Projects Committees API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Committees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get All Committees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/committees.json"
+          },
+          "docs": "Returns a JSON object containing information about all ASF Project Management Committees (PMCs), including chair, description, homepage, and roster."
+        },
+        {
+          "info": {
+            "name": "Apache Software Foundation Get Committee Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/committee-info.json"
+          },
+          "docs": "Returns detailed information about all ASF committees (PMCs), including their chairs, established dates, reporting schedules, and full member rosters with join dates."
+        },
+        {
+          "info": {
+            "name": "Apache Software Foundation Get LDAP Committee Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/public_ldap_committees.json"
+          },
+          "docs": "Returns committee data sourced from ASF LDAP, listing all PMCs and their member rosters by Apache ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

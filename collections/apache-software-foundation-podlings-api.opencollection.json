@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Software Foundation Projects Committees Podlings API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Podlings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get All Podlings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/podlings.json"
+          },
+          "docs": "Returns a JSON object containing information about all ASF Incubator podlings, including their status (current, graduated, retired), start date, sponsor, mentors, and description."
+        },
+        {
+          "info": {
+            "name": "Apache Software Foundation Get Podlings Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/public_podlings.json"
+          },
+          "docs": "Returns information about incubator podlings, including their status, description, sponsor, mentors, and key dates."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

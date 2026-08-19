@@ -1,26 +1,25 @@
 {
   "item": [
     {
-      "id": "950fb14a-9cba-4eff-b3d2-d24ca90075f3",
-      "name": "Projects",
+      "id": "c292d0ea-7c86-4726-b728-a4ea95fcc9c3",
+      "name": "Members",
       "description": {
         "content": "",
         "type": "text/plain"
       },
       "item": [
         {
-          "id": "ad1e763a-683c-4e8c-b8e6-2d8a231f6026",
-          "name": "Apache Software Foundation Get All Projects",
+          "id": "b9ba9a2d-69fe-46da-bf74-2e6b7bbf8ce8",
+          "name": "Apache Software Foundation Get Member Information",
           "request": {
-            "name": "Apache Software Foundation Get All Projects",
+            "name": "Apache Software Foundation Get Member Information",
             "description": {
-              "content": "Returns a JSON object containing metadata for all ASF top-level projects, including name, description, category, PMC, programming language, and repository information.",
+              "content": "Returns publicly available information about ASF members, including member status and availability data.",
               "type": "text/plain"
             },
             "url": {
               "path": [
-                "foundation",
-                "projects.json"
+                "member-info.json"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -39,13 +38,12 @@
           },
           "response": [
             {
-              "id": "e6d2202e-fe56-410a-9465-b2da8d9938c3",
-              "name": "Successful response with projects data",
+              "id": "3f26f682-1653-4942-b758-5f6d3ecf247e",
+              "name": "Successful response with member information",
               "originalRequest": {
                 "url": {
                   "path": [
-                    "foundation",
-                    "projects.json"
+                    "member-info.json"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -93,8 +91,8 @@
     }
   ],
   "info": {
-    "_postman_id": "21350485-d6f8-4247-9402-9fae1abb6220",
-    "name": "Apache Software Foundation Committees Projects API",
+    "_postman_id": "fd5eaf84-3db6-4735-8bff-922da8f1ee04",
+    "name": "Apache Software Foundation Projects Committees Members API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
       "content": "The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.\n\nContact Support:\n Name: Apache Software Foundation",

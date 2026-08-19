@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Software Foundation Projects Committees People API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get People",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/people.json"
+          },
+          "docs": "Returns a JSON object mapping ASF member usernames to the list of committees and groups they belong to."
+        },
+        {
+          "info": {
+            "name": "Apache Software Foundation Get People Names",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/people_name.json"
+          },
+          "docs": "Returns a JSON object mapping ASF member usernames to their display names."
+        },
+        {
+          "info": {
+            "name": "Apache Software Foundation Get LDAP People Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/public_ldap_people.json"
+          },
+          "docs": "Returns public people data from ASF LDAP, including display names and group memberships for all committers."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

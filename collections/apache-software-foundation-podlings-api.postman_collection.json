@@ -1,0 +1,174 @@
+{
+  "item": [
+    {
+      "id": "02fde059-60bd-49ed-8e76-cbf53364385f",
+      "name": "Podlings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0b47351c-1096-4848-b669-e3b219a96443",
+          "name": "Apache Software Foundation Get All Podlings",
+          "request": {
+            "name": "Apache Software Foundation Get All Podlings",
+            "description": {
+              "content": "Returns a JSON object containing information about all ASF Incubator podlings, including their status (current, graduated, retired), start date, sponsor, mentors, and description.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "foundation",
+                "podlings.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "660dadc3-8cff-4b24-9a1d-600a207a5a3c",
+              "name": "Successful response with podlings data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foundation",
+                    "podlings.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84c6dfed-d87d-40f5-8388-41d6cbd786fb",
+          "name": "Apache Software Foundation Get Podlings Data",
+          "request": {
+            "name": "Apache Software Foundation Get Podlings Data",
+            "description": {
+              "content": "Returns information about incubator podlings, including their status, description, sponsor, mentors, and key dates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "public_podlings.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "85763fb0-41ef-4435-8d4c-006b3407ca58",
+              "name": "Successful response with podlings data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public_podlings.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://projects.apache.org/json",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c74dbc59-a361-4ba4-bdd9-a5e911b33a76",
+    "name": "Apache Software Foundation Projects Committees Podlings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.\n\nContact Support:\n Name: Apache Software Foundation",
+      "type": "text/plain"
+    }
+  }
+}

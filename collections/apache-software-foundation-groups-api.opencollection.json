@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Software Foundation Projects Committees Groups API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get LDAP Groups Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/public_ldap_groups.json"
+          },
+          "docs": "Returns Unix group data sourced from ASF LDAP, listing all groups and their member rosters by Apache ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

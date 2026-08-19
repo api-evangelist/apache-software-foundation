@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Software Foundation Projects Committees Releases API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Releases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Software Foundation Get All Releases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://projects.apache.org/json/foundation/releases.json"
+          },
+          "docs": "Returns a JSON object containing release information for all ASF projects, including version numbers and release dates."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
