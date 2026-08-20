@@ -23,6 +23,12 @@ access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-software-foundation.png
 tags:
   - ASF
+  - Open-Source
+  - Governance
+  - Project
+  - Apache
+tags_raw:
+  - ASF
   - Open Source
   - Governance
   - Projects
@@ -41,6 +47,12 @@ apis:
     membership, release histories, and incubating podlings.
   humanURL: https://projects.apache.org/
   tags:
+  - Committees
+  - Open-Source
+  - Project
+  - Releases
+  - Podlings
+  tags_raw:
   - Committees
   - Open Source
   - Projects
@@ -84,6 +96,8 @@ apis:
   description: The Groups API from Apache Software Foundation — 1 operation(s) for groups.
   humanURL: https://projects.apache.org/
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
