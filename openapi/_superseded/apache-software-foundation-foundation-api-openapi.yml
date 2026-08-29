@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Apache Software Foundation Projects Committees Releases API
+  title: Apache Software Projects Committees Foundation API
   description: The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.
   version: 1.0.0
   contact:
@@ -13,18 +13,18 @@ servers:
 - url: https://projects.apache.org/json
   description: ASF Projects JSON Data
 tags:
-- name: Releases
+- name: Foundation
 paths:
-  /foundation/releases.json:
+  /foundation/groups.json:
     get:
-      operationId: getReleases
-      summary: Apache Software Foundation Get All Releases
-      description: Returns a JSON object containing release information for all ASF projects, including version numbers and release dates.
+      operationId: getGroups
+      summary: Apache Software Foundation Get Foundation Groups
+      description: Returns a JSON object containing all ASF groups (PMCs, committees, and other organizational groups) and their members.
       tags:
-      - Releases
+      - Foundation
       responses:
         '200':
-          description: Successful response with releases data
+          description: Successful response with foundation groups data
           content:
             application/json:
               schema:
@@ -32,23 +32,12 @@ paths:
                 additionalProperties:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Release'
+                    type: string
               examples:
-                GetReleases200Example:
-                  summary: Default getReleases 200 response
+                GetGroups200Example:
+                  summary: Default getGroups 200 response
                   x-microcks-default: true
                   value: {}
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
-components:
-  schemas:
-    Release:
-      type: object
-      properties:
-        version:
-          type: string
-          description: The release version string
-        date:
-          type: string
-          description: The release date

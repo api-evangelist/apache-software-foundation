@@ -1,30 +1,32 @@
 {
   "provider": "apache-software-foundation",
   "sources": [
-    "apache-software-foundation-committees-api-openapi.yml",
-    "apache-software-foundation-foundation-api-openapi.yml",
-    "apache-software-foundation-groups-api-openapi.yml",
-    "apache-software-foundation-icla-api-openapi.yml",
-    "apache-software-foundation-members-api-openapi.yml",
-    "apache-software-foundation-people-api-openapi.yml",
-    "apache-software-foundation-podlings-api-openapi.yml",
-    "apache-software-foundation-projects-api-openapi.yml",
-    "apache-software-foundation-releases-api-openapi.yml"
+    "_original/apache-software-foundation-whimsy-api-openapi.yml"
   ],
   "outputs": [
     "apache-software-foundation-committees-api-openapi.yml",
-    "apache-software-foundation-foundation-api-openapi.yml",
     "apache-software-foundation-groups-api-openapi.yml",
     "apache-software-foundation-icla-api-openapi.yml",
     "apache-software-foundation-members-api-openapi.yml",
     "apache-software-foundation-people-api-openapi.yml",
-    "apache-software-foundation-podlings-api-openapi.yml",
-    "apache-software-foundation-projects-api-openapi.yml",
-    "apache-software-foundation-releases-api-openapi.yml"
+    "apache-software-foundation-podlings-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-software-foundation-whimsy-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0"
+  ],
+  "skipped": [
+    "apache-software-foundation-committees-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-software-foundation-foundation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-software-foundation-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-software-foundation-icla-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-software-foundation-members-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-software-foundation-people-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-software-foundation-podlings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-software-foundation-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-software-foundation-releases-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

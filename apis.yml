@@ -50,37 +50,6 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-software-foundation/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
-- aid: apache-software-foundation:projects-api
-  name: Apache Software Foundation Projects API
-  description: >-
-    The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects,
-    committees, releases, and podlings. The data is served as static JSON files from projects.apache.org
-    and includes comprehensive information about the foundation's structure, project metadata, committee
-    membership, release histories, and incubating podlings.
-  humanURL: https://projects.apache.org/
-  tags:
-  - Committees
-  - Open-Source
-  - Project
-  - Releases
-  - Podlings
-  tags_raw:
-  - Committees
-  - Open Source
-  - Projects
-  - Releases
-  - Podlings
-  properties:
-  - type: Documentation
-    url: https://projects.apache.org/
-  - type: OpenAPI
-    url: openapi/apache-software-foundation-projects-api-openapi.yml
-  - type: JSONSchema
-    url: json-schema/apache-software-foundation-project-schema.json
-  - type: JSONSchema
-    url: json-schema/apache-software-foundation-committee-schema.json
-  - type: JSONSchema
-    url: json-schema/apache-software-foundation-podling-schema.json
 - aid: apache-software-foundation:apache-software-foundation-committees-api
   name: Apache Software Foundation Committees API
   description: The Committees API from Apache Software Foundation — 3 operation(s) for committees.
@@ -90,17 +59,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/apache-software-foundation-committees-api-openapi.yml
-  - type: Documentation
-    url: https://whimsy.apache.org/public/
-- aid: apache-software-foundation:apache-software-foundation-foundation-api
-  name: Apache Software Foundation Foundation API
-  description: The Foundation API from Apache Software Foundation — 1 operation(s) for foundation.
-  humanURL: https://projects.apache.org/
-  tags:
-  - Foundation
-  properties:
-  - type: OpenAPI
-    url: openapi/apache-software-foundation-foundation-api-openapi.yml
   - type: Documentation
     url: https://whimsy.apache.org/public/
 - aid: apache-software-foundation:apache-software-foundation-groups-api
@@ -158,17 +116,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/apache-software-foundation-podlings-api-openapi.yml
-  - type: Documentation
-    url: https://whimsy.apache.org/public/
-- aid: apache-software-foundation:apache-software-foundation-releases-api
-  name: Apache Software Foundation Releases API
-  description: The Releases API from Apache Software Foundation — 1 operation(s) for releases.
-  humanURL: https://projects.apache.org/
-  tags:
-  - Releases
-  properties:
-  - type: OpenAPI
-    url: openapi/apache-software-foundation-releases-api-openapi.yml
   - type: Documentation
     url: https://whimsy.apache.org/public/
 common:
