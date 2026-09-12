@@ -119,6 +119,8 @@ apis:
   - type: Documentation
     url: https://whimsy.apache.org/public/
 common:
+  - type: Website
+    url: https://www.apache.org/
   - type: AgenticAccess
     url: agentic-access/apache-software-foundation-agentic-access.yml
   - type: VulnerabilityDisclosure
