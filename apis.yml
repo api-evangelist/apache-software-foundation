@@ -120,6 +120,12 @@ apis:
   - type: Documentation
     url: https://whimsy.apache.org/public/
 common:
+  - type: Plans
+    url: plans/apache-software-foundation-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/apache-software-foundation-rate-limits.yml
+  - type: FinOps
+    url: finops/apache-software-foundation-finops.yml
   - type: Website
     url: https://www.apache.org/
   - type: AgenticAccess
