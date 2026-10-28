@@ -1,4 +1,4 @@
-# Apache Software Foundation (apache-software-foundation)
+# Apache Software Foundation
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,88 +66,173 @@
 
 APIs for the Apache Software Foundation (ASF), a nonprofit organization that supports the development of open-source software projects under the Apache License, providing governance, legal protection, and infrastructure for over 350 projects. The ASF exposes public APIs for project discovery, committee governance data, member information, and organizational structure through its Projects API and Whimsy Public Data API.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/apache-software-foundation/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-software-foundation/refs/heads/main/apis.yml)
+**Areas:** ASF · Open Source · Governance · Project · Apache
 
-## Scope
+## Apache Software Foundation on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Apache Software Foundation is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-software-foundation/](https://apis.io/providers/apache-software-foundation/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- ASF
-- Open Source
-- Governance
-- Projects
-- Apache
+- [Apache Software Foundation Committees API](https://apis.io/apis/apache-software-foundation/apache-software-foundation-committees-api/) — The Committees API from Apache Software Foundation — 3 operation(s) for committees.
+- [Apache Software Foundation Groups API](https://apis.io/apis/apache-software-foundation/apache-software-foundation-groups-api/) — The Groups API from Apache Software Foundation — 1 operation(s) for groups.
+- [Apache Software Foundation ICLA API](https://apis.io/apis/apache-software-foundation/apache-software-foundation-icla-api/) — The ICLA API from Apache Software Foundation — 1 operation(s) for icla.
+- [Apache Software Foundation Members API](https://apis.io/apis/apache-software-foundation/apache-software-foundation-members-api/) — The Members API from Apache Software Foundation — 1 operation(s) for members.
+- [Apache Software Foundation People API](https://apis.io/apis/apache-software-foundation/apache-software-foundation-people-api/) — The People API from Apache Software Foundation — 3 operation(s) for people.
+- [Apache Software Foundation Podlings API](https://apis.io/apis/apache-software-foundation/apache-software-foundation-podlings-api/) — The Podlings API from Apache Software Foundation — 2 operation(s) for podlings.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-01-01
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Apache Software Foundation Projects API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Apache Software Foundation Projects API provides read-only access to JSON data about ASF projects, committees, releases, and podlings. The data is served as static JSON files from projects.apache.org and includes comprehensive information about the foundation's structure, project metadata, committee membership, release histories, and incubating podlings.
+- [Apache Software Foundation Agentic Access](https://apis.io/agentic-access/apache-software-foundation/apache-software-foundation-agentic-access/)
 
-- **Human URL:** [https://projects.apache.org/](https://projects.apache.org/)
+#### JSON Schema (3)
 
-#### Tags
+The data models the API reads and writes.
 
-- Committees
-- Open Source
-- Projects
-- Releases
-- Podlings
+- [Apache Software Foundation Committee](https://apis.io/schemas/apache-software-foundation/apache-software-foundation-committee/)
+- [Apache Software Foundation Podling](https://apis.io/schemas/apache-software-foundation/apache-software-foundation-podling/)
+- [Apache Software Foundation Project](https://apis.io/schemas/apache-software-foundation/apache-software-foundation-project/)
 
-#### Properties
+#### JSON Structure (3)
 
-- [Documentation](https://projects.apache.org/)
-- [OpenAPI](openapi/apache-software-foundation-projects-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/apache-software-foundation-projects-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/apache-software-foundation-projects-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/apache-software-foundation-project-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/apache-software-foundation-committee-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/apache-software-foundation-podling-schema.json) — [JSON Schema](https://json-schema.org/specification)
+Data models expressed in JSON Structure.
 
-### Apache Software Foundation Whimsy Public Data API
+- [Apache Software Foundation Committee Structure](https://apis.io/json-structure/apache-software-foundation/apache-software-foundation-committee-structure/)
+- [Apache Software Foundation Podling Structure](https://apis.io/json-structure/apache-software-foundation/apache-software-foundation-podling-structure/)
+- [Apache Software Foundation Project Structure](https://apis.io/json-structure/apache-software-foundation/apache-software-foundation-project-structure/)
 
-The Apache Whimsy Public Data API provides access to publicly available information about the Apache Software Foundation's organizational structure. It exposes data about committees, members, committers, and ICLA (Individual Contributor License Agreement) information. The data is maintained by the ASF Secretary and Whimsy tooling.
+#### JSON-LD (1)
 
-- **Human URL:** [https://whimsy.apache.org/public/](https://whimsy.apache.org/public/)
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Apache Software Foundation Asf Context](https://apis.io/jsonld/apache-software-foundation/apache-software-foundation-asf-context/)
 
-- Governance
-- Members
-- Open Source
-- Committees
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://whimsy.apache.org/public/)
-- [OpenAPI](openapi/apache-software-foundation-whimsy-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/apache-software-foundation-whimsy-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/apache-software-foundation-whimsy-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Apache Software Foundation Vocabulary](https://apis.io/vocabularies/apache-software-foundation/apache-software-foundation-vocabulary/)
 
-## Common Properties
+#### Examples (3)
 
-- [LinkedIn](https://www.linkedin.com/company/the-apache-software-foundation)
-- [Portal](https://www.apache.org/)
-- [Blog](https://blogs.apache.org/)
+Example requests and responses.
+
+- [Apache Software Foundation Committee Example](https://apis.io/examples/apache-software-foundation/apache-software-foundation-committee-example/)
+- [Apache Software Foundation Podling Example](https://apis.io/examples/apache-software-foundation/apache-software-foundation-podling-example/)
+- [Apache Software Foundation Project Example](https://apis.io/examples/apache-software-foundation/apache-software-foundation-project-example/)
+
+#### Collections (10)
+
+Postman and Open Collection request collections.
+
+- [Apache Software Foundation Projects Committees API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-committees-api/)
+- [Apache Software Projects Committees Foundation API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-foundation-api/)
+- [Apache Software Foundation Projects Committees Groups API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-groups-api/)
+- [Apache Software Foundation Projects Committees ICLA API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-icla-api/)
+- [Apache Software Foundation Projects Committees Members API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-members-api/)
+- [Apache Software Foundation Projects Committees People API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-people-api/)
+- [Apache Software Foundation Projects Committees Podlings API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-podlings-api/)
+- [Apache Software Foundation Committees Projects API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-projects-api/)
+- [Apache Software Foundation Projects Committees Releases API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-releases-api/)
+- [Apache Software Foundation Whimsy Public Data API](https://apis.io/collections/apache-software-foundation/open-apache-software-foundation-whimsy-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache Software Foundation — jsonschema rules](https://apis.io/rules/apache-software-foundation/apache-software-foundation-jsonschema-spectral-rules/)
+- [Apache Software Foundation API Rules](https://apis.io/rules/apache-software-foundation/apache-software-foundation-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Software Foundation Domain Security](https://apis.io/security/apache-software-foundation/apache-software-foundation-domain-security/)
+- [Apache Software Foundation Vulnerability Disclosure](https://apis.io/security/apache-software-foundation/apache-software-foundation-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Software Foundation Plans Pricing](https://apis.io/plans/apache-software-foundation/apache-software-foundation-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Software Foundation Rate Limits](https://apis.io/rate-limits/apache-software-foundation/apache-software-foundation-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Software Foundation Finops](https://apis.io/finops/apache-software-foundation/apache-software-foundation-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://www.apache.org/foundation/)
-- [GitHub Organization](https://github.com/apache)
-- [Spectral Rules](rules/apache-software-foundation-spectral-rules.yml)
-- [Vocabulary](vocabulary/apache-software-foundation-vocabulary.yaml)
-- [Terms of Service](https://www.apache.org/licenses/)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Blog](https://blogs.apache.org/)
+- [Terms of service](https://www.apache.org/licenses/)
+- [GitHub](https://github.com/apache)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Kin Score 32.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 54.6 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 18.4 |
+
+**Agent readiness 23.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-software-foundation/](https://apis.io/providers/apache-software-foundation/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Software Foundation: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-software-foundation/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
